@@ -1,5 +1,6 @@
 import Nav from './Nav';
 import './common.css'
+import logo from "../assets/Logo .svg";
 const linkArray=[
     {
     name:'Home',
@@ -17,7 +18,8 @@ const linkArray=[
     },
     {
         name:'Reservations',
-        id:14
+        id:14,
+        path:'/booking-form'
     },
     {
         name:'Order Online',
@@ -31,7 +33,7 @@ const linkArray=[
 function Header(){
   return (
     <header className='header-container'>
-        <img src={require('../assets/Logo .svg')} alt='logo'/>
+        <img src={logo} alt='logo'/>
         {linkArray.map((val,i)=>(
             <Nav items={val}/>
         )) }
