@@ -1,12 +1,15 @@
 import Nav from './Nav';
+import './common.css'
 const linkArray=[
     {
     name:'Home',
-    id:11
+    id:11,
+    path:'/'
     },
     {
     name:'About',
-    id:12
+    id:12,
+    path:'/about'
     },
     {
     name:'Menu',
@@ -27,7 +30,7 @@ const linkArray=[
 ]
 function Header(){
   return (
-    <header style={{display:'flex',flexDirection:'row'}}>
+    <header className='header-container'>
         <img src={require('../assets/Logo .svg')} alt='logo'/>
         {linkArray.map((val,i)=>(
             <Nav items={val}/>

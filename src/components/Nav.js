@@ -1,7 +1,8 @@
-function Nav({items}){
+import './common.css'
+function Nav(props){
    return <nav>
         <ul >
-            <li key={items.id}><a href="">{items.name}</a></li>
+            <li key={props.items.id} className="list-type"><a href={props.items.path}>{props.items.name}</a></li>
         </ul>
     </nav>
 }
