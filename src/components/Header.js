@@ -28,7 +28,7 @@ const linkArray=[
 function Header(){
   return (
     <header>
-        <img src={require('../assets/Logo .svg')}/>
+        <img src={require('../assets/Logo .svg')} alt='logo'/>
         {linkArray.map((val,i)=>(
             <Nav items={val}/>
         )) }
