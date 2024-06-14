@@ -1,7 +1,7 @@
 function Nav({items}){
    return <nav>
-        <ul key={items.id}>
-            <li>{items.name}</li>
+        <ul >
+            <li key={items.id}><a href="">{items.name}</a></li>
         </ul>
     </nav>
 }

@@ -27,7 +27,7 @@ const linkArray=[
 ]
 function Header(){
   return (
-    <header>
+    <header style={{display:'flex',flexDirection:'row'}}>
         <img src={require('../assets/Logo .svg')} alt='logo'/>
         {linkArray.map((val,i)=>(
             <Nav items={val}/>
