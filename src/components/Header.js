@@ -30,7 +30,7 @@ function Header(){
     <header>
         <img src={require('../assets/Logo .svg')}/>
         {linkArray.map((val,i)=>(
-            <Nav item={val}/>
+            <Nav items={val}/>
         )) }
 
     </header>
