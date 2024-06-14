@@ -1,4 +1,4 @@
-function Nav(items){
+function Nav({items}){
    return <nav>
         <ul key={items.id}>
             <li>{items.name}</li>
