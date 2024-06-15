@@ -1,35 +1,7 @@
 import Nav from './Nav';
 import './common.css'
 import logo from "../assets/Logo .svg";
-const linkArray=[
-    {
-    name:'Home',
-    id:11,
-    path:'/'
-    },
-    {
-    name:'About',
-    id:12,
-    path:'/about'
-    },
-    {
-    name:'Menu',
-    id:13
-    },
-    {
-        name:'Reservations',
-        id:14,
-        path:'/booking-form'
-    },
-    {
-        name:'Order Online',
-        id:15
-    },
-    {
-        name:'Login',
-        id:16
-    }
-]
+import {linkArray} from '../JsonData'
 function Header(){
   return (
     <header className='header-container'>

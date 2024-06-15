@@ -11,3 +11,10 @@ list-style-type: none;
 .booking-form-main{
     display: flex;
 }
+.main-card-div{
+    background-color: #EDEFEE;
+    margin: 24px 50px 0px 0px;
+}
+.special-data-val{
+    padding: 18px;
+}

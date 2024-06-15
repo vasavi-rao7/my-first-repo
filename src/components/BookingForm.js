@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useState } from "react";
 import './common.css'
+import CustomButton from "./Button";
 function reducer(state, action) {
     if(action.type==='changed_time'){
       return {
@@ -51,7 +52,7 @@ const handleChangeDate=(e)=>{
       <option value={'Birthday'}>Birthday</option>
       <option value={'Anniversary'}>Anniversary</option>
    </select>
-   <button onClick={(e)=>handleSubmit(e)} >Make Your reservation</button>
+   <CustomButton onClick={(e)=>handleSubmit(e)} title='Make Your reservation' height='50px'/>
 
     </form>
     </>

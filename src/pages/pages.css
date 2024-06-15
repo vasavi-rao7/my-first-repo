@@ -10,3 +10,9 @@
 .left-column{
     width:50%;
 }
+.about-main{
+    background-color: #ffffff;
+    padding:24px;
+    display:flex;
+    width: 100%;
+}

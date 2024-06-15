@@ -1,8 +1,9 @@
 import './common.css'
+import Logo from '../assets/Logo .svg'
 
 function Footer(){
   return  <footer className="container">
-    <img src=""/>
+    <img src={Logo}/>
     <div>
       <h5>Doormat navigation</h5>
       <p>Home</p>
