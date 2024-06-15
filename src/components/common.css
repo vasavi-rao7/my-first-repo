@@ -8,3 +8,6 @@ list-style-type: none;
 .header-container{
     display: flex;
 }
+.booking-form-main{
+    display: flex;
+}

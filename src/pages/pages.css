@@ -1,3 +1,12 @@
 .booking-page-main{
     margin:24px
 }
+.home-main{
+    background-color: #495E57;
+    padding:24px;
+    display:flex;
+    width: 100%;
+}
+.left-column{
+    width:50%;
+}

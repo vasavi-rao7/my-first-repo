@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
+import './common.css'
 function reducer(state, action) {
     if(action.type==='changed_time'){
       return {
@@ -16,7 +17,6 @@ function BookingForm(props){
     const [formData,setFormData]=useState(initialState)
     const [state, dispatch] = useReducer(reducer, { timeVal: formData.time });
     const handleSubmit=(e)=>{
-      console.log('form data check',formData)
         e.preventDefault();
         props.submitForm(formData);
     }
@@ -26,9 +26,12 @@ const handleChangeDate=(e)=>{
   props.updateTimes(e.target.value)
 }
     return(
-          <form style={{display: 'grid', maxWidth: '200px', gap: "20px"}} >
+      <div className="booking-form-main">
+        <img src={require('../assets/restaurant.jpg')} width={500} height={600}/>
+        <>
+          <form style={{display: 'grid', maxWidth: '200px', gap: "20px",margin:'24px'}} >
         <label for="res-date">Choose date</label>
-   <input type="date" id="res-date" value={formData.date} onChange={(e)=>handleChangeDate(e)}/>
+   <input type="date" id="res-date" value={formData.date} style={{width:'500px'}} onChange={(e)=>handleChangeDate(e)}/>
    <label for="res-time">Choose time</label>
    <select id="res-time " value={state.timeVal} onChange={(e)=>{
     setFormData({...formData,time:e.target.value});
@@ -50,6 +53,8 @@ const handleChangeDate=(e)=>{
    </select>
    <button onClick={(e)=>handleSubmit(e)} >Make Your reservation</button>
 
-    </form>)
+    </form>
+    </>
+    </div>)
 }
 export default BookingForm;

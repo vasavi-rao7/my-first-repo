@@ -8,7 +8,7 @@ import About from './pages/About';
 import BookingPage from './pages/BookingPage';
 function App() {
   return (
-    <>
+    <main className='main-container'>
       <Header/>
     <Routes>
     <Route path='/' element={<Home/>}/>
@@ -19,7 +19,7 @@ function App() {
       <Main/>
       <Footer/>
       
-    </>
+    </main>
   );
 }
 
