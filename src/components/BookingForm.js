@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 function reducer(state, action) {
     if(action.type==='changed_time'){
       return {
@@ -6,24 +6,32 @@ function reducer(state, action) {
       };
     }
     }
-
+const initialState={
+  date:'',
+  time:'17:00',
+  guest:0,
+  ocassion:''
+}
 function BookingForm(props){
-    const [data,setDate]=useState('');
-    const [time,setTime]=useState('17:00');
-    const [guest,setGuest]=useState(0);
-    const [occasion,setOccasion]=useState(0);
-    const [state, dispatch] = useReducer(reducer, { timeVal: time });
+    const [formData,setFormData]=useState(initialState)
+    const [state, dispatch] = useReducer(reducer, { timeVal: formData.time });
     const handleSubmit=(e)=>{
+      console.log('form data check',formData)
         e.preventDefault();
-        alert('Form succesfully submitted');
+        props.submitForm(formData);
     }
-
+   
+const handleChangeDate=(e)=>{
+  setFormData({...formData,date:e.target.value});
+  props.updateTimes(e.target.value)
+}
     return(
-    <form style={{display: 'grid', maxWidth: '200px', gap: "20px"}} >
+          <form style={{display: 'grid', maxWidth: '200px', gap: "20px"}} >
         <label for="res-date">Choose date</label>
-   <input type="date" id="res-date" value={data} onChange={(e)=>setDate(e.target.value)}/>
+   <input type="date" id="res-date" value={formData.date} onChange={(e)=>handleChangeDate(e)}/>
    <label for="res-time">Choose time</label>
    <select id="res-time " value={state.timeVal} onChange={(e)=>{
+    setFormData({...formData,time:e.target.value});
     dispatch({ type: 'changed_time', nextTime: e.target.value })
    }}>
       <option value={'17:00'}>17:00</option>
@@ -34,9 +42,9 @@ function BookingForm(props){
       <option value={'22:00'}>22:00</option>
    </select>
    <label for="guests">Number of guests</label>
-   <input type="number" placeholder="1" min="1" max="10" id="guests" value={guest} onChange={(e)=>setGuest(e.target.value)}/>
+   <input type="number" placeholder="1" min="1" max="10" id="guests" value={formData.guest} onChange={(e)=> setFormData({...formData,guest:e.target.value})}/>
    <label for="occasion">Occasion</label>
-   <select id="occasion" value={occasion} onChange={(e)=>{setOccasion(e.target.value)}}>
+   <select id="occasion" value={formData.ocassion} onChange={(e)=>{ setFormData({...formData,ocassion:e.target.value})}}>
       <option value={'Birthday'}>Birthday</option>
       <option value={'Anniversary'}>Anniversary</option>
    </select>
